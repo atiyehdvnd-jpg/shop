@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>لیست علاقه‌مندی‌ها</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./css/cart.css">
+  <link rel="icon" href="./images/favicon.ico">
+      <link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+/>
+</head>
+<body>
+
+<header>
+  لیست علاقه‌مندی‌ها
+  <div class="header-inner">
+    <div class="header-icons">
+      <a href="login.html" title="پروفایل"><i class="fas fa-user"></i></a>
+      <a href="cart.html" title="سبد خرید"><i class="fas fa-shopping-cart"></i></a>
+      <a href="index.html" title="خانه"><i class="fas fa-home"></i></a>
+      <a href="wishlist.html" title="علاقه‌مندی‌ها"><i class="fas fa-heart"></i>
+      <a href="#" title="جستجو"><i class="fas fa-search"></i></a>
+    </div>
+</header>
+
+<div class="cart-container" id="wishlist"></div>
+
+<script>
+  function loadWishlist() {
+    let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+    const container = document.getElementById('wishlist');
+    container.innerHTML = ''; 
+
+    if (!wishlist.length) {
+      container.innerHTML = '<div class="empty-message">لیست علاقه‌مندی‌ها خالی است.</div>';
+      return;
+    }
+
+    wishlist.forEach((item, index) => {
+      container.innerHTML += `
+        <div class="cart-item" data-index="${index}">
+          <img src="${item.image}" alt="${item.title}">
+          <div class="item-info">
+            <h4>${item.title}</h4>
+            <span>${item.price}</span>
+          </div>
+          <div class="actions">
+            <button class="remove-btn">حذف</button>
+          </div>
+        </div>
+      `;
+    });
+
+    document.querySelectorAll('.remove-btn').forEach(btn => {
+      btn.addEventListener('click', function () {
+        const index = this.closest('.cart-item').dataset.index;
+        wishlist.splice(index, 1);
+        localStorage.setItem("wishlist", JSON.stringify(wishlist));
+        loadWishlist();
+      });
+    });
+  }
+
+  window.onload = loadWishlist;
+</script>
+
+</body>
+</html>

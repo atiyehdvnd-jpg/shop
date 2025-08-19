@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>سبد خرید</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./css/cart.css">
+  <link rel="icon" href="./images/favicon.ico">
+      <link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+/>
+</head>
+<body>
+
+<header>
+  سبد خرید شما
+    <div class="header-icons">
+      <a href="login.html" title="پروفایل"><i class="fas fa-user"></i></a>
+      <a href="cart.html" title="سبد خرید"><i class="fas fa-shopping-cart"></i></a>
+      <a href="index.html" title="خانه"><i class="fas fa-home"></i></a>
+      <a href="wishlist.html" title="علاقه‌مندی‌ها"><i class="fas fa-heart"></i></a>>
+      <a href="#" title="جستجو"><i class="fas fa-search"></i></a>
+    </div>
+</header>
+<div class="cart-container" id="cart"></div>
+<script>
+  function loadCart() {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const container = document.getElementById('cart');
+    container.innerHTML = ''; 
+
+    if (!cart.length) {
+      container.innerHTML = '<div class="empty-message">سبد خرید شما خالی است.</div>';
+      return;
+    }
+
+    let total = 0;
+    cart.forEach((item, index) => {
+      total += item.price;
+      container.innerHTML += `
+        <div class="cart-item" data-index="${index}">
+          <img src="${item.img}" alt="${item.title}">
+          <div class="item-info">
+            <h4>${item.title}</h4>
+            <span>${item.price.toLocaleString('fa-IR')} تومان</span>
+          </div>
+          <div class="actions">
+            <button class="remove-btn">حذف</button>
+          </div>
+        </div>
+      `;
+    });
+
+    container.innerHTML += `
+      <div class="cart-summary">
+        <strong>مجموع:</strong>
+        <span>${total.toLocaleString('fa-IR')} تومان</span>
+        <button id="checkout-btn">تسویه حساب</button>
+      </div>
+    `;
+
+
+    document.querySelectorAll('.remove-btn').forEach(btn => {
+      btn.addEventListener('click', function () {
+        const index = this.closest('.cart-item').dataset.index;
+        cart.splice(index, 1);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        loadCart();
+      });
+    });
+
+    
+    document.getElementById('checkout-btn').addEventListener('click', function () {
+  window.location.href = "checkout.html";
+});
+  }
+
+  window.onload = loadCart;
+</script>
+</body>
+</html>

@@ -1,0 +1,866 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <title>Lunava</title>
+   <link rel="stylesheet" href="./css/index.css">
+<link rel="stylesheet" href="./css/main.css">
+<link rel="stylesheet" href="./css/animate.css">
+<link rel="stylesheet" href="./css/flexboxgrid.css">
+<link rel="icon" href="./images/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
+    
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+/>
+ </head>
+ <body>
+    <header>
+      <nav>
+        <div class="nav-right">
+  <a href="#" title="پروفایل"><i class="fas fa-user"></i></a>
+  <a href="#" title="سبد خرید"><i class="fas fa-shopping-cart"></i></a>
+  <a href="#" title="خانه"><i class="fas fa-home"></i></a>
+  <a href="#" title="علاقه‌مندی‌ها"><i class="fas fa-heart"></i>
+</a>
+
+  <a href="#" title="جستجو"><i class="fas fa-search"></i></a>
+  <div class="search-box hidden" id="search-box">
+  <input type="text" placeholder="جستجو کنید..." id="search-input">
+  <button id="search-btn"><i class="fas fa-search"></i></button>
+</div>
+      </div>
+       <img src="./images/logo.png" alt="لوگو سایت" class="logo">
+      <div class="nav-left">
+  <a href="login.html" class="register-login-btn">
+    <i class="fas fa-sign-in-alt"></i>
+    <span>ورود / ثبت‌نام</span>
+  </a>
+</div>
+
+      </nav>
+      <nav class="main-nav">
+  <ul>
+    <!-- آرایشی -->
+    <li class="dropdown">
+      <a href="#">آرایشی</a>
+      <div class="dropdown-content">
+        <div class="submenu-column">
+          <h4>آرایش صورت</h4>
+          <a href="#">کرم BB کرم CC و DD</a>
+          <a href="divio.html">کرم پودر</a>
+          <a href="#">کانسیلر</a>
+          <a href="#">پنکک</a>
+          <a href="blush.html">رژ گونه</a>
+          <a href="#">پرایمر صورت</a>
+        </div>
+        <div class="submenu-column">
+          <h4>آرایش چشم و ابرو</h4>
+          <a href="#">ریمل</a>
+          <a href="#">مداد و خط چشم</a>
+          <a href="#">سایه چشم</a>
+          <a href="#">ژل و صابون ابرو</a>
+          <a href="#">سایه ابرو</a>
+          <a href="#">مداد و ماژیک ابرو</a>
+        </div>
+        <div class="submenu-column">
+          <h4>آرایش لب</h4>
+          <a href="#">رژ لب</a>
+          <a href="#">رژ لب مایع و برق لب</a>
+          <a href="#">مداد و خط لب</a>
+          <a href="tint.html">تینت لب</a>
+        </div>
+        <div class="submenu-column">
+          <h4>آرایش ناخن</h4>
+          <a href="nailpolish.html">لاک ناخن</a>
+          <a href="#">لاک پاک کن</a>
+          <a href="#">ابزار مانیکور و پدیکور</a>
+          <a href="#">ناخن مصنوعی</a>
+        </div>
+      </div>
+    </li>
+
+    <!-- مراقبت پوست -->
+    <li class="dropdown">
+      <a href="#">مراقبت پوست</a>
+      <div class="dropdown-content">
+        <div class="submenu-column">
+          <h4>مراقبت صورت</h4>
+          <a href="#">ضد آفتاب</a>
+          <a href="cream.html">آبرسان و مرطوب کننده</a>
+          <a href="#">ماسک صورت</a>
+          <a href="#">اسکراب و لایه بردار صورت</a>
+          <a href="#">کرم شب و روز</a>
+          <a href="serum.html">سرم و روغن صورت</a>
+          <a href="#">ضد لک و روشن کننده</a>
+        </div>
+        <div class="submenu-column">
+          <h4>پاک کننده و شوینده</h4>
+          <a href="#">شوینده صورت</a>
+          <a href="#">آرایش پاک کن و میسلار واتر</a>
+          <a href="#">تونر</a>
+          <a href="#">پاک کننده آرایش چشم</a>
+        </div>
+        <div class="submenu-column">
+          <h4>مراقبت بدن</h4>
+          <a href="#">روغن و لوسیون بدن</a>
+          <a href="#">ضد ترک و اسکار</a>
+          <a href="#">روشن کننده بدن</a>
+          <a href="#">اسکراب بدن</a>
+        </div>
+      </div>
+    </li>
+
+    <!-- زیبایی مو -->
+    <li class="dropdown">
+      <a href="#">زیبایی مو</a>
+      <div class="dropdown-content">
+        <div class="submenu-column">
+          <h4>زیبایی مو</h4>
+          <a href="#">اسپری مو</a>
+          <a href="#">ژل مو</a>
+          <a href="#">موس و فوم مو</a>
+          <a href="#">واکس مو</a>
+          <a href="#">رنگ مو</a>
+          <a href="#">دکلره و اکسیدان</a>
+        </div>
+        <div class="submenu-column">
+          <h4>مراقبت از مو</h4>
+          <a href="#">ماسک مو</a>
+          <a href="#">روغن مو</a>
+          <a href="#">سرم مو</a>
+          <a href="#">کرم و لوسیون مو</a>
+        </div>
+        <div class="submenu-column">
+          <h4>شامپو</h4>
+          <a href="shampoo.html">شامپو موی معمولی</a>
+          <a href="#">شامپو موی چرب</a>
+          <a href="#">شامپو موی خشک و آسیب دیده</a>
+          <a href="#">شامپو ضدریزش و تقویت کننده</a>
+          <a href="#">شامپو ضد شوره</a>
+        </div>
+      </div>
+    </li>
+
+    <!-- بهداشت شخصی -->
+    <li class="dropdown">
+      <a href="#">بهداشت شخصی</a>
+      <div class="dropdown-content">
+        <div class="submenu-column">
+          <h4>بهداشت دهان و دندان</h4>
+          <a href="#">خمیر دندان</a>
+          <a href="#">نخ دندان</a>
+          <a href="#">دهانشویه</a>
+          <a href="#">مسواک</a>
+        </div>
+      </div>
+    </li>
+
+    <!-- عطر و اسپری -->
+    <li class="dropdown">
+      <a href="#">عطر و اسپری</a>
+      <div class="dropdown-content">
+         <div class="submenu-column">
+          <h4>عطر و ادکلن</h4>
+          <a href="perfume.html">عطر زنانه</a>
+          <a href="#">عطر مردانه</a>
+          <a href="#">عطر کودک</a>
+        </div>
+        <div class="submenu-column">
+          <h4>اسپری بدن</h4>
+          <a href="#">اسپری زنانه</a>
+          <a href="#">اسپری مردانه</a>
+        </div>
+        <div class="submenu-column">
+          <h4>بادی اسپلش</h4>
+          <a href="body-splash.html">بادی اسپلش زنانه</a>
+          <a href="#">بادی اسپلش مردانه</a>
+        </div>
+        <div class="submenu-column">
+          <h4>عطر جیبی</h4>
+          <a href="#">عطر جیبی زنانه</a>
+          <a href="tomford.html">عطر جیبی مردانه</a>
+        </div>
+      </div>
+    </li>
+  </ul>
+</nav>
+      <section class="slider">
+         <div class="slides">
+            <div class="item active" id="slide1">
+               <img src="./images/p10.jpg" alt="">
+               <span>تجربه‌ای نو از زیبایی و مراقبت</span>
+            </div>
+            <div class="item" id="slide2">
+               <img src="./images/p12.jpg" alt="">
+               <span>زیبایی تو، تخصص ماست</span>
+            </div>
+            <div class="item" id="slide3">
+               <img src="./images/p7.jpg" alt="">
+               <span>با ما همیشه بدرخش</span>
+            </div>
+         </div>
+         <div class="buttons">
+            <i  onclick="setSlide('slide1' , 1)" class="fas fa-circle"></i>
+            <i  onclick="setSlide('slide2' , 2)" class="fas fa-circle"></i>
+            <i  onclick="setSlide('slide3' , 3)" class="fas fa-circle"></i>
+         </div>
+
+      </section>
+    </header>
+
+    <main>
+      <section class="product-sec-new">
+         <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6-xs-12 ">
+               <div class="shoping-card">
+               <a href="perfume.html" style="text-decoration: none; color: inherit;">
+                  <div class="img-sec">
+                      <img src="./images/im1.jpg" alt="">
+                      <span class="hot-offer">پیشنهاد ویژه</span>
+                      <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                      </div>
+                  </div>
+                  <div class="discount-badge">-20%</div>
+                  <div class="title">
+                     ادوپرفیوم زنانه شی ایز ماین لاریو
+                  </div>
+                  </a>
+                  <div class="buttons">
+                     <div class="right">
+                        <span class="old-price">975,000 تومان</span>
+                        <span class="new-price">780,000 تومان</span>
+                     </div>
+                     <div class="left">
+                        <div class="extend-btn">
+                           <a class="b-text" href="">علاقه</a>
+                           <a class="b-icon" href=""><i class="fas fa-heart"></i></a>
+                        </div>
+                        <div class="extend-btn">
+                           <a class="b-text" href="">خرید</a>
+                           <a class="b-icon" href=""><i class="fas fa-shopping-cart"></i></i></a>
+                        </div>
+
+                     </div>
+
+                  </div>
+               </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6-xs-12 ">
+               <div class="shoping-card">
+               <a href="body-splash.html" style="text-decoration: none; color: inherit;">
+                  <div class="img-sec">
+                      <img src="./images/im3.jpg" alt="">
+                      <span class="hot-offer">پیشنهاد ویژه</span>
+                      <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        
+                      </div>
+
+                  </div>
+                  <div class="discount-badge">-15%</div>
+                  <div class="title">
+                     بادی اسپلش زنانه هات لاو مدل Eclat Lanvin
+                  </div>
+                  </a>
+                  <div class="buttons">
+                     <div class="right">
+                        <span class="old-price">215,000 تومان</span>
+                        <span class="new-price">182,000 تومان</span>
+                     </div>
+                     <div class="left">
+                        <div class="extend-btn">
+                           <a class="b-text" href="">علاقه</a>
+                           <a class="b-icon" href=""><i class="fas fa-heart"></i></a>
+                        </div>
+                        <div class="extend-btn">
+                           <a class="b-text" href="">خرید</a>
+                           <a class="b-icon" href=""><i class="fas fa-shopping-cart"></i></i></a>
+                        </div>
+
+                     </div>
+
+                  </div>
+               </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6-xs-12 ">
+               <div class="shoping-card">
+               <a href="blush.html" style="text-decoration: none; color: inherit;">
+                  <div class="img-sec">
+                      <img src="./images/im2.jpg" alt="">
+                      <span class="hot-offer">پیشنهاد ویژه</span>
+                      <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                      </div>
+
+                  </div>
+                  <div class="discount-badge">-5%</div>
+                  <div class="title">
+                     رژ گونه کالیستا مدل Color And Art
+                  </div>
+                  </a>
+                  <div class="buttons">
+                     <div class="right">
+                        <span class="old-price">365,000 تومان</span>
+                        <span class="new-price">346,000 تومان</span>
+                     </div>
+                     <div class="left">
+                        <div class="extend-btn">
+                           <a class="b-text" href="">علاقه</a>
+                           <a class="b-icon" href=""><i class="fas fa-heart"></i></a>
+                        </div>
+                        <div class="extend-btn">
+                           <a class="b-text" href="">خرید</a>
+                           <a class="b-icon" href=""><i class="fas fa-shopping-cart"></i></i></a>
+                        </div>
+
+                     </div>
+
+                  </div>
+               </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6-xs-12 ">
+               <div class="shoping-card">
+               <a href="cream.html" style="text-decoration: none; color: inherit;">
+                  <div class="img-sec">
+                      <img src="./images/im4.jpg" alt="">
+                      <span class="hot-offer">پیشنهاد ویژه</span>
+                      <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                      </div>
+
+                  </div>
+                  <div class="discount-badge">-50%</div>
+                  <div class="title">
+                     کرم مرطوب کننده 24 ساعته پرایم
+                  </div>
+                  </a>
+                  <div class="buttons">
+                     <div class="right">
+                        <span class="old-price">597,000 تومان</span>
+                        <span class="new-price">298,000 تومان</span>
+                     </div>
+                     <div class="left">
+                        <div class="extend-btn">
+                           <a class="b-text" href="">علاقه</a>
+                           <a class="b-icon" href=""><i class="fas fa-heart"></i></a>
+                        </div>
+                        <div class="extend-btn">
+                           <a class="b-text" href="">خرید</a>
+                           <a class="b-icon" href=""><i class="fas fa-shopping-cart"></i></i></a>
+                        </div>
+
+                     </div>
+
+                  </div>
+               </div>
+            </div>
+          
+         </div>
+
+      </section>
+      <section class="super-offer-section">
+         <div class="row">
+            <div class="col-lg-9">
+               <div class="supper-offer-box">
+                  <span class="supper-offer-box-title">
+                     پیشنهاد شگفت انگیز
+                  </span>
+                  <div class="body">
+                     <div class="row">
+                        <div class="col-lg-4">
+                           <div class="image-container">
+                              <img src="./images/of2.jpg" alt="">
+                           </div>
+                        </div>
+                        <div class="col-lg-8">
+                           <div class="spesification">
+                              <div class="price-row">
+                                 <div class="price">1 میلیون تومان</div>
+                                 <div class="off">60% تخفیف</div>
+                              </div>
+                              <div class="title">پلت سایه فوکالر 12 رنگ مدل جاسمین</div>
+                              <div class="counter-down">
+                                 <span id="seconds">55</span> :
+                                 <span id="minutes">15</span> :
+                                 <span id="hours">19</span>
+                              </div>
+                              <div class="remaining-time">زمان باقی مانده تا پایان سفارش</div>
+                           </div>
+
+                        </div>
+                     </div>
+                  </div>
+
+               </div>
+
+            </div>
+            <div class="col-lg-3">
+               <div class="banner">
+                  <img src="./images/of1.jpg" style="width: 260px;height:auto;" alt="">
+               </div>
+
+            </div>
+         </div>
+         
+      </section>
+      <section class="dragble-list">
+         <div class="title">
+            <span>محصولات</span>
+         </div>
+         <div id="owl-product" class="owl-carousel owl-theme">
+            <div class="item">
+                <div class="shoping-card">
+               <a href="divio.html" style="text-decoration: none; color: inherit;">
+                  <div class="img-sec">
+                      <img src="./images/h1.jpg" alt="">
+                      <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                      </div>
+
+                  </div>
+                  <div class="title">
+                     کرم پودر فول کاور دیو ایو
+                  </div>
+                  </a>
+                  <div class="buttons">
+                     <div class="right">
+                        <span class="price">235,000 تومان</span>
+                     </div>
+                     <div class="left">
+                        <div class="extend-btn">
+                           <a class="b-text" href="">علاقه</a>
+                           <a class="b-icon" href=""><i class="fas fa-heart"></i></a>
+                        </div>
+                        <div class="extend-btn">
+                           <a class="b-text" href="">خرید</a>
+                           <a class="b-icon" href=""><i class="fas fa-shopping-cart"></i></i></a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+             <div class="item">
+                <div class="shoping-card">
+                <a href="nailpolish.html" style="text-decoration: none; color: inherit;">
+                  <div class="img-sec">
+                      <img src="./images/h2.jpg" alt="">
+                      <div class="stars">
+                        <i class="fas fa-star"></i>
+                      </div>
+
+                  </div>
+                  <div class="title">
+                     لاک ناخن وانورا
+                  </div>
+                  </a>
+                  <div class="buttons">
+                     <div class="right">
+                        <span class="price">105,000 تومان</span>
+                     </div>
+                     <div class="left">
+                        <div class="extend-btn">
+                           <a class="b-text" href="">علاقه</a>
+                           <a class="b-icon" href=""><i class="fas fa-heart"></i></a>
+                        </div>
+                        <div class="extend-btn">
+                           <a class="b-text" href="">خرید</a>
+                           <a class="b-icon" href=""><i class="fas fa-shopping-cart"></i></i></a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+             <div class="item">
+                <div class="shoping-card">
+                  <div class="img-sec">
+                  <a href="brush.html" style="text-decoration: none; color: inherit;">
+                      <img src="./images/h3.jpg" alt="">
+                      <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                      </div>
+
+                  </div>
+                  <div class="title">
+                     براش تكى مدل RE3
+                  </div>
+                  </a>
+                  <div class="buttons">
+                     <div class="right">
+                        <span class="price">189,000 تومان</span>
+                     </div>
+                     <div class="left">
+                        <div class="extend-btn">
+                           <a class="b-text" href="">علاقه</a>
+                           <a class="b-icon" href=""><i class="fas fa-heart"></i></a>
+                        </div>
+                        <div class="extend-btn">
+                           <a class="b-text" href="">خرید</a>
+                           <a class="b-icon" href=""><i class="fas fa-shopping-cart"></i></i></a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+             <div class="item">
+                <div class="shoping-card">
+                  <div class="img-sec">
+                  <a href="contour.html" style="text-decoration: none; color: inherit;">
+                      <img src="./images/h4.jpg" alt="">
+                      <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                      </div>
+
+                  </div>
+                  <div class="title">
+                     پالت كانتور مدل Contour
+                  </div>
+                  </a>
+                  <div class="buttons">
+                     <div class="right">
+                        <span class="price">295,000 تومان</span>
+                     </div>
+                     <div class="left">
+                        <div class="extend-btn">
+                           <a class="b-text" href="">علاقه</a>
+                           <a class="b-icon" href=""><i class="fas fa-heart"></i></a>
+                        </div>
+                        <div class="extend-btn">
+                           <a class="b-text" href="">خرید</a>
+                           <a class="b-icon" href=""><i class="fas fa-shopping-cart"></i></i></a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+             <div class="item">
+                <div class="shoping-card">
+                  <div class="img-sec">
+                   <a href="tomford.html" style="text-decoration: none; color: inherit;">
+                      <img src="./images/h5.jpg" alt="">
+                      <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                      </div>
+
+                  </div>
+                  <div class="title">
+                     عطر جیبی مردانه اسکلاره
+                  </div>
+                  </a>
+                  <div class="buttons">
+                     <div class="right">
+                        <span class="price">121,000 تومان</span>
+                     </div>
+                     <div class="left">
+                        <div class="extend-btn">
+                           <a class="b-text" href="">علاقه</a>
+                           <a class="b-icon" href=""><i class="fas fa-heart"></i></a>
+                        </div>
+                        <div class="extend-btn">
+                           <a class="b-text" href="">خرید</a>
+                           <a class="b-icon" href=""><i class="fas fa-shopping-cart"></i></i></a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+             <div class="item">
+                <div class="shoping-card">
+               <a href="shampoo.html" style="text-decoration: none; color: inherit;">
+                  <div class="img-sec">
+                      <img src="./images/h6.jpg" alt="">
+                      <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                      </div>
+
+                  </div>
+                  <div class="title">
+                     شامپو روزانه مدل روغن زیتون
+                  </div>
+                  </a>
+                  <div class="buttons">
+                     <div class="right">
+                        <span class="price">59,000 تومان</span>
+                     </div>
+                     <div class="left">
+                        <div class="extend-btn">
+                           <a class="b-text" href="">علاقه</a>
+                           <a class="b-icon" href=""><i class="fas fa-heart"></i></a>
+                        </div>
+                        <div class="extend-btn">
+                           <a class="b-text" href="">خرید</a>
+                           <a class="b-icon" href=""><i class="fas fa-shopping-cart"></i></i></a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+             <div class="item">
+                <div class="shoping-card">
+                <a href="tint.html" style="text-decoration: none; color: inherit;">
+                  <div class="img-sec">
+                      <img src="./images/h7.jpg" alt="">
+                      <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                      </div>
+
+                  </div>
+                  <div class="title">
+                     رژگونه و تینت لب مدل قلبی
+                  </div>
+                  </a>
+                  <div class="buttons">
+                     <div class="right">
+                        <span class="price">156,000 تومان</span>
+                     </div>
+                     <div class="left">
+                        <div class="extend-btn">
+                           <a class="b-text" href="">علاقه</a>
+                           <a class="b-icon" href=""><i class="fas fa-heart"></i></a>
+                        </div>
+                        <div class="extend-btn">
+                           <a class="b-text" href="">خرید</a>
+                           <a class="b-icon" href=""><i class="fas fa-shopping-cart"></i></i></a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="item">
+                <div class="shoping-card">
+                <a href="serum.html" style="text-decoration: none; color: inherit;">
+                  <div class="img-sec">
+                      <img src="./images/h8.jpg" alt="">
+                      <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                      </div>
+
+                  </div>
+                  <div class="title">
+                     سرم روشن کننده ام کیو
+                  </div>
+                  </a>
+                  <div class="buttons">
+                     <div class="right">
+                        <span class="price">581,000 تومان</span>
+                     </div>
+                     <div class="left">
+                        <div class="extend-btn">
+                           <a class="b-text" href="">علاقه</a>
+                           <a class="b-icon" href=""><i class="fas fa-heart"></i></a>
+                        </div>
+                        <div class="extend-btn">
+                           <a class="b-text" href="">خرید</a>
+                           <a class="b-icon" href=""><i class="fas fa-shopping-cart"></i></i></a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+
+
+            </div>
+         </div>
+      </section>
+    </main>
+    <footer>
+      <div class="row">
+         <div class="col-lg-8">
+            <div class="right">
+               <div class="title">
+                  درباره ما
+               </div>
+               <div class="des">
+                  لوناوا، ترکیبی از لطافت ماه و درخشش نو، با هدف خلق تجربه‌ای متفاوت در دنیای زیبایی و مراقبت از پوست و مو شکل گرفت. ما در لوناوا باور داریم که زیبایی حقیقی از انتخاب‌های آگاهانه آغاز می‌شود. به همین دلیل، تلاش کرده‌ایم مجموعه‌ای از برترین و معتبرترین برندهای آرایشی و بهداشتی را گرد هم آوریم تا هر فردی بتواند با خیال راحت، انتخابی سازگار با پوست و سبک زندگی خود داشته باشد.
+
+در لوناوا، کیفیت، اصالت کالا و رضایت شما در اولویت قرار دارد. ما تنها یک فروشگاه نیستیم، بلکه همراهی مطمئن در مسیر زیبایی، خودمراقبتی و اعتماد به نفس شما هستیم. هر محصول، با دقت و حساسیت انتخاب شده تا نه تنها زیبایی بیرونی، بلکه حس خوب درونی را نیز برای شما به ارمغان بیاورد.
+
+با لوناوا بدرخشید؛ چون شما سزاوار بهترین‌ها هستید.
+
+               </div>
+
+            </div>
+         </div>
+         <div class="col-lg-4">
+            <div class="left">
+               <div class="title">
+                  ما را در شبکه های اجتماعی دنبال کنید
+               </div>
+               <div class="socials">
+                  <a href=""><i class="fab fa-twitter"></i></a>
+                  <a href=""><i class="fab fa-instagram"></i></a>
+                  <a href=""><i class="fab fa-linkedin"></i></a>
+                  <a href=""><i class="fab fa-telegram-plane"></i></a>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="bottom">
+         کلیه حقوق محفوظ میباشد 2025 ©
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script src="./js/main.js"></script>
+<script>
+  document.querySelector('.fa-user').addEventListener('click', function (e) {
+    e.preventDefault();
+    alert('صفحه ورود یا پروفایل باز می‌شود.');
+    location.href = './login.html';
+  });
+
+  document.querySelector('.fa-heart').addEventListener('click', function (e) {
+  e.preventDefault();
+  alert('رفتن به علاقه مندی ها');
+  location.href = './wishlist.html';
+});
+
+  document.querySelector('.fa-shopping-cart').addEventListener('click', function (e) {
+    e.preventDefault();
+    alert('رفتن به سبد خرید.');
+    location.href = './cart.html';
+  });
+
+  document.querySelector('.fa-home').addEventListener('click', function (e) {
+    e.preventDefault();
+    alert('صفحه اصلی باز میشود');
+    location.href = './index.html';
+  });
+
+  document.querySelector('.fa-search').addEventListener('click', function (e) {
+    e.preventDefault();
+    alert('جستجو باز می‌شود.');
+      const box = document.getElementById('search-box');
+    box.classList.remove('hidden');
+    document.getElementById('search-input').focus();
+  });
+
+document.getElementById('search-btn').addEventListener('click', function () {
+  const keyword = document.getElementById('search-input').value.trim();
+});
+</script>
+<script>
+  document.getElementById('search-btn').addEventListener('click', function () {
+    const keyword = document.getElementById('search-input').value.trim();
+    if (!keyword) {
+      alert("لطفاً عبارتی برای جستجو وارد کنید");
+      return;
+    }
+
+    let found = false;
+    const products = document.querySelectorAll('.shoping-card');
+
+    products.forEach(card => {
+      const title = card.querySelector('.title').textContent;
+
+      if (title.includes(keyword)) {
+        found = true;
+
+        
+        card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+        
+        card.classList.add('highlight');
+        setTimeout(() => {
+          card.classList.remove('highlight');
+        }, 2000);
+      }
+    });
+
+    if (!found) {
+      alert("محصولی با این نام پیدا نشد.");
+    }
+  });
+</script>
+
+<script>
+  // سبد خرید
+  document.querySelectorAll('.fa-shopping-cart').forEach(icon => {
+    icon.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      const card = icon.closest('.shoping-card');
+      const title = card.querySelector('.title').textContent.trim();
+
+      // بررسی وجود new-price یا price
+      const priceElement = card.querySelector('.new-price') || card.querySelector('.price');
+      const priceText = priceElement.textContent;
+      const price = parseInt(priceText.replace(/[^\d]/g, ''));
+
+      const img = card.querySelector('img') ? card.querySelector('img').getAttribute('src') : '';
+
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+      const alreadyInCart = cart.some(item => item.title === title);
+      if (!alreadyInCart) {
+        cart.push({ title, price, img });
+        localStorage.setItem("cart", JSON.stringify(cart));
+        alert("محصول به سبد خرید اضافه شد.");
+      } else {
+        alert("این محصول قبلاً اضافه شده.");
+      }
+    });
+  });
+  </script>
+<script>
+  document.querySelectorAll('.fa-heart').forEach(icon => {
+    icon.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      const card = icon.closest('.shoping-card');
+      const title = card.querySelector('.title').textContent.trim();
+      const priceElement = card.querySelector('.new-price') || card.querySelector('.price') || card.querySelector('.old-price');
+      const price = priceElement ? priceElement.textContent : '';
+      const image = card.querySelector('img').getAttribute('src');
+
+      let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+
+      const alreadyInWishlist = wishlist.some(item => item.title === title);
+      if (!alreadyInWishlist) {
+        wishlist.push({ title, price, image });
+        localStorage.setItem("wishlist", JSON.stringify(wishlist));
+        alert("محصول به علاقه‌مندی‌ها اضافه شد.");
+      } else {
+        alert("این محصول قبلاً تو لیست علاقه‌مندی‌ها هست.");
+      }
+    });
+  });
+</script>
+
+ </body>
+ </html>

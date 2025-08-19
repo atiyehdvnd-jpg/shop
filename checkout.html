@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>تسویه حساب</title>
+  <link rel="stylesheet" href="./css/checkout.css">
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/flexboxgrid.css">
+  <link rel="icon" href="./images/favicon.ico">
+</head>
+<body>
+  <div class="checkout-box">
+    <h2>تسویه حساب</h2>
+    <form id="checkout-form" method="POST">
+      <div class="form-group">
+        <label for="name">نام و نام خانوادگی</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">شماره تماس</label>
+        <input type="text" id="phone" name="phone" required>
+      </div>
+
+      <div class="form-group">
+        <label for="address">آدرس</label>
+        <input type="text" id="address" name="address" required>
+      </div>
+
+      <div class="form-group">
+        <label for="province">استان</label>
+        <select id="province" name="province" required>
+          <option>تهران</option>
+          <option>اصفهان</option>
+          <option>فارس</option>
+          <option>گیلان</option>
+          <option>خراسان رضوی</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="payment">روش پرداخت</label>
+        <select id="payment" name="payment" required>
+          <option>پرداخت آنلاین</option>
+          <option>پرداخت در محل</option>
+        </select>
+      </div>
+      <button type="submit" class="btn-submit">ثبت سفارش</button>
+      <div class="order-summary" id="summary">
+  <h3>خلاصه سفارش</h3>
+</div>
+</div>
+      </div>
+
+      
+    </form>
+  </div>
+  
+ <script>
+  function loadSummary() {
+    const summaryContainer = document.getElementById("summary");
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    if (!cart.length) {
+      summaryContainer.innerHTML = "<p>سبد خرید شما خالی است.</p>";
+      return;
+    }
+
+    let total = 0;
+    let html = "<h3>خلاصه سفارش</h3>";
+
+    cart.forEach(item => {
+      total += item.price;
+      html += `<p>${item.title} × 1 — ${item.price.toLocaleString('fa-IR')} تومان</p>`;
+    });
+
+    html += `
+    <hr><strong>جمع کل: ${total.toLocaleString('fa-IR')} تومان</strong>`;
+    summaryContainer.innerHTML = html;
+  }
+
+  window.onload = loadSummary;
+  document.getElementById("checkout-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const phone = document.getElementById("phone").value;
+    const address = document.getElementById("address").value;
+    const province = document.getElementById("province").value;
+    const payment = document.getElementById("payment").value;
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    const order = {
+      name,
+      phone,
+      address,
+      province,
+      payment,
+      items: cart,
+      createdAt: new Date().toISOString(),
+      orderId: Math.floor(Math.random() * 1000000)
+    };
+
+    let orders = JSON.parse(localStorage.getItem("orders")) || [];
+    orders.push(order);
+    localStorage.setItem("orders", JSON.stringify(orders));
+
+  
+    localStorage.removeItem("cart");
+
+  
+    document.querySelector(".checkout-box").innerHTML = `
+      <h2>✅ سفارش شما با موفقیت ثبت شد!</h2>
+      <p>شماره سفارش: <strong>#${order.orderId}</strong></p>
+      <p>از خرید شما متشکریم 🙏</p>
+      <a href="home.html" style="display:inline-block;margin-top:20px;color:#28a745">بازگشت به صفحه اصلی</a>
+    `;
+  });
+</script>
+</body>
+</html>

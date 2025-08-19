@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>شامپو مخصوص موهای خشک و شکننده میجی</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="./images/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+<header class="pastel-header">
+  <div class="header-inner">
+    <div class="header-icons">
+      <a href="login.html" title="پروفایل"><i class="fas fa-user"></i></a>
+      <a href="cart.html" title="سبد خرید"><i class="fas fa-shopping-cart"></i></a>
+      <a href="index.html" title="خانه"><i class="fas fa-home"></i></a>
+      <a href="wishlist.html" title="علاقه‌مندی‌ها"><i class="fas fa-heart"></i>
+      <a href="#" title="جستجو"><i class="fas fa-search"></i></a>
+    </div>
+    <img src="./images/logo.png" alt="لوگو سایت" class="header-logo">
+  </div>
+</header>
+
+<main class="container">
+  <section class="product-section">
+    <div class="product-wrapper">
+      <div class="image-box large">
+        <img src="./images/h6.jpg" alt="شامپو مخصوص موهای خشک میجی" class="zoomable">
+      </div>
+      <div class="product-details">
+        <h2>شامپو مخصوص موهای خشک و شکننده میجی</h2>
+        <p class="sub">Miji Daily Shampoo For Dry Hair - 300ml</p>
+        <div class="stars">★★☆☆☆</div>
+        <div class="price">59,000 تومان</div>
+        <button class="buy-btn" onclick="addToCart()">افزودن به سبد خرید</button>
+
+        <section class="desc-section">
+          <h3>معرفی محصول</h3>
+          <div class="desc-box" id="desc1">
+            <p>
+              شامپو روزانه میجی با فرمولاسیون حاوی روغن زیتون، مناسب موهای خشک و شکننده است. این شامپو با خاصیت آنتی‌باکتریال باعث ترمیم ساقه‌های مو، رفع خشکی، جلوگیری از موخوره و تقویت پوست کف سر می‌شود.
+            </p>
+            <ul>
+              <li>حاوی روغن زیتون خالص</li>
+              <li>تقویت‌کننده ساقه مو و ضد موخوره</li>
+              <li>آنتی‌باکتریال و تقویت‌کننده پوست سر</li>
+              <li>مناسب برای استفاده روزانه</li>
+              <li>شویندگی ملایم</li>
+              <li>مناسب بانوان و آقایان</li>
+              <li>حجم: 300 میلی‌لیتر</li>
+              <li>ساخت ایران</li>
+            </ul>
+          </div>
+          <button class="toggle-btn" onclick="toggleDesc('desc1', this)">مشاهده بیشتر</button>
+        </section>
+      </div>
+    </div>
+
+    <section class="review-section">
+      <h3>ثبت نظر کاربران</h3>
+      <form>
+        <input type="text" placeholder="نام شما">
+        <textarea rows="4" placeholder="نظر شما..."></textarea>
+        <button type="submit" class="buy-btn">ارسال نظر</button>
+      </form>
+    </section>
+  </section>
+</main>
+
+<script>
+  function toggleDesc(id, btn) {
+    const box = document.getElementById(id);
+    box.classList.toggle("open");
+    btn.textContent = box.classList.contains("open") ? "بستن توضیحات" : "مشاهده بیشتر";
+  }
+
+  function addToCart() {
+    const product = {
+      id: "shampoo1",
+      title: "شامپو موهای خشک میجی - روغن زیتون",
+      price: 85000,
+      img: "./images/h6.jpg",
+      quantity: 1
+    };
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    const existing = cart.find(item => item.id === product.id);
+    if (existing) {
+      existing.quantity += 1;
+    } else {
+      cart.push(product);
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert("محصول به سبد خرید اضافه شد!");
+  }
+</script>
+</body>
+</html>

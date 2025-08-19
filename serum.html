@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>سرم روشن کننده و ضدلک MQ</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="./images/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+/>
+</head>
+<body>
+<header class="pastel-header">
+  <div class="header-inner">
+    <div class="header-icons">
+      <a href="login.html" title="پروفایل"><i class="fas fa-user"></i></a>
+      <a href="cart.html" title="سبد خرید"><i class="fas fa-shopping-cart"></i></a>
+      <a href="index.html" title="خانه"><i class="fas fa-home"></i></a>
+      <a href="wishlist.html" title="علاقه‌مندی‌ها"><i class="fas fa-heart"></i>
+      <a href="#" title="جستجو"><i class="fas fa-search"></i></a>
+    </div>
+    <img src="./images/logo.png" alt="لوگو سایت" class="header-logo">
+  </div>
+</header>
+
+<main class="container">
+  <section class="product-section">
+    <div class="product-wrapper">
+      <div class="image-box large">
+        <img src="./images/h8.jpg" alt="سرم ضدلک و روشن کننده MQ" class="zoomable">
+      </div>
+      <div class="product-details">
+        <h2>سرم روشن کننده و ضدلک MQ</h2>
+        <p class="sub">MQ Intense Lightening Serum 30ml</p>
+        <div class="stars">★★☆☆☆</div>
+        <div class="price">581,000 تومان</div>
+        <button class="buy-btn" onclick="addToCart()">افزودن به سبد خرید</button>
+
+        <section class="desc-section">
+          <h3>معرفی محصول</h3>
+          <div class="desc-box" id="desc1">
+            <p>
+              سرم ضدلک MQ محصولی مؤثر برای کاهش تیرگی، لک‌های پوستی و روشن شدن پوست است. مناسب انواع پوست بوده و با فرمولی سبک، به سرعت جذب شده و درخشندگی طبیعی به پوست می‌بخشد. ایده‌آل برای استفاده روز و شب.
+            </p>
+            <ul>
+              <li>نوع محصول: سرم ضدلک و روشن‌کننده</li>
+              <li>مناسب صورت</li>
+              <li>برای انواع پوست</li>
+              <li>قابل استفاده در روز و شب</li>
+              <li>فاقد چربی با جذب سریع</li>
+              <li>قابل استفاده برای خانم‌ها و آقایان</li>
+              <li>سن مصرف: تمام سنین</li>
+              <li>حجم: 30 میلی‌لیتر</li>
+            </ul>
+          </div>
+          <button class="toggle-btn" onclick="toggleDesc('desc1', this)">مشاهده بیشتر</button>
+        </section>
+      </div>
+    </div>
+
+    <section class="review-section">
+      <h3>ثبت نظر کاربران</h3>
+      <form>
+        <input type="text" placeholder="نام شما">
+        <textarea rows="4" placeholder="نظر شما..."></textarea>
+        <button type="submit" class="buy-btn">ارسال نظر</button>
+      </form>
+    </section>
+  </section>
+</main>
+
+<script>
+  function toggleDesc(id, btn) {
+    const box = document.getElementById(id);
+    box.classList.toggle("open");
+    btn.textContent = box.classList.contains("open") ? "بستن توضیحات" : "مشاهده بیشتر";
+  }
+
+  function addToCart() {
+    const product = {
+      id: "serum1",
+      title: "سرم روشن کننده و ضدلک MQ",
+      price: 275000,
+      img: "./images/h8.jpg",
+      quantity: 1
+    };
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    const existing = cart.find(item => item.id === product.id);
+    if (existing) {
+      existing.quantity += 1;
+    } else {
+      cart.push(product);
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert("محصول به سبد خرید اضافه شد!");
+  }
+</script>
+</body>
+</html>
