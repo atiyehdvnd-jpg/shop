@@ -1,0 +1,81 @@
+body {
+  font-family: 'Iran', 'Vazir', sans-serif;
+  background: #A770EF;
+background: -webkit-linear-gradient(to right, #FDB99B, #CF8BF3, #A770EF);
+background: linear-gradient(to right, #FDB99B, #CF8BF3, #A770EF);
+
+  margin: 0;
+  padding: 30px;
+  direction: rtl;
+}
+
+.checkout-box {
+  max-width: 700px;
+  margin: auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.07);
+}
+
+h2, h3 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #444;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.order-summary {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 30px;
+  border: 1px solid #ddd;
+}
+
+.order-summary p {
+  margin: 8px 0;
+}
+
+.order-summary strong {
+  display: block;
+  margin-top: 15px;
+  font-size: 16px;
+  color: #111;
+}
+
+.btn-submit {
+  background-color: #28a745;
+  color: white;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  width: auto;
+  display: block;
+  margin: 20px auto 0;
+}
+
+.btn-submit:hover {
+  background-color: #218838;
+}
